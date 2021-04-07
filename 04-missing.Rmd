@@ -1,1 +1,34 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Missing values
+
+## Missing data Count
+We can see the total number of NAs in each column for the dataset:
+```{r}
+colSums(is.na(dataset))
+```
+
+## Visualizing Missing data in dataset
+```{r}
+extracat::visna(dataset,sort = "b")
+```
+
+The blue represents missing values. The rows show a missing pattern and the columns represent the column level missing values. 
+
+We can find out that the column "rank","name","genre","platform", and "publisher" do not have missing values at all.However, there is a substaintial amount of data missing values for user score, critic score, and sales for all regions. In addition, the column "user score" has most missing values compared to other variables. 
+
+## Deleting NAs
+
+We use na.omit to delete the rows with missing values and check the updated dataset with graph.
+
+```{r}
+dataset = na.omit(dataset)
+library(mi)
+x=missing_data.frame(as.data.frame(dataset))
+image(x)
+```
+
+Black area represents missing values. Since there is no dark area, our data is now practicable and usable after using na.omit().
