@@ -1,1 +1,29 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Data transformation
+
+
+## Brief View of the Dataset
+
+Here is a brief view of the first 20 rows of the dataset.
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(readr)
+library(DT)
+vgsales = read_csv("vgsales-12-4-2019.csv")
+datatable(head(vgsales,20),rownames = FALSE)
+```
+
+Let us also take a view at all variables of the data.
+```{r}
+colnames(vgsales)
+```
+
+Obviously, there are variables that contribute nothing to our investigation of main questions. Now we decide to remove useless variables and focus on the updated dataset. Here is what the updated dataset looks like.
+
+```{r}
+dataset = vgsales[,c("Rank","Name","Genre","Platform","Publisher","Critic_Score","User_Score","Global_Sales","NA_Sales","PAL_Sales","JP_Sales","Other_Sales","Year")]
+head(dataset)
+```
