@@ -1,1 +1,94 @@
 # Results
+
+
+
+
+
+
+
+
+## Top 5 Video Games & Genres
+
+
+```{r fig.height=10}
+library(ggplot2)
+library(viridis)
+
+theme_dotplot <- theme_bw(15) +
+    theme(axis.text.y = element_text(size = rel(.75)),
+        axis.ticks.y = element_blank(),
+        axis.title.x = element_text(size = rel(.75)),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(size = 0.6),
+        panel.grid.minor.x = element_blank())
+
+names = levels(factor(dataset$Name))
+indsales = rep(NA,length(names))
+index=1
+for (i in names){
+  indsales[index] = sum(dataset[dataset$Name==i,]$Global_Sales)
+  index=index+1
+}
+plotdata=data.frame(names=names,indsales=indsales)
+ggplot(plotdata,aes(indsales,reorder(names,indsales)))+
+  geom_point()+ylab("Game Names")+xlab("Global Sales in Milliom")
+
+```
+
+Graph above shows the total gobal sales for every game. The top five popular games across the world are:\
+1.Call of Duty 4: Modern Warfare\
+2.Call of Duty: Modern Warfare 2\
+3.Grand Theft Auto IV\
+4.Assassin's Creed \
+5.Grand Theft Auto V \
+All of their global sales are over 7.5 millions.
+
+```{r message=FALSE}
+library(dplyr)
+dataset$Genre=factor(dataset$Genre)
+genre = levels(dataset$Genre)
+n=length(levels(dataset$Genre))
+nasales=rep(NA,n)
+eusales=rep(NA,n)
+jasales=rep(NA,n)
+globalsales = rep(NA,n)
+othersales = rep(NA,n)
+ind=1
+
+for (i in genre){
+  nasales[ind] = sum(dataset[dataset$Genre==i,]$NA_Sales)
+  eusales[ind] = sum(dataset[dataset$Genre==i,]$PAL_Sales)
+  jasales[ind] = sum(dataset[dataset$Genre==i,]$JP_Sales)
+  globalsales[ind] = sum(dataset[dataset$Genre==i,]$Global_Sales)
+  othersales[ind] = sum(dataset[dataset$Genre==i,]$Other_Sales)
+  ind=ind+1
+}
+
+data=data.frame(
+  genre = rep(factor(genre),4),
+  sales=c(nasales,eusales,jasales,othersales),
+  regions=c(rep("NAsales",n),rep("EUsales",n),rep("JapanSales",n),rep("Othersales",n))
+)
+
+## sorting by sales
+data = data %>% mutate(genre = forcats::fct_reorder(genre, sales, .fun = sum)) 
+
+library(plotly)
+## stacked bar chart
+p=ggplot(data = data, aes(x = genre, y = sales, fill = regions)) +
+  geom_bar(stat='identity') + coord_flip()+ylab("Sales in million")
+
+ggplotly(p)
+```
+
+The graph displays the sales for different genres. The colors represent different regions. From the stacked bar chart, we can find out that Action is most popular genre whereas Action-Adventure is the least popular. The top five genres are: Action, Shooter, Role-plying, platform,and Adventure.In addition, we can see that Action and Shooter captures the majority game market. Next, we will look closer to the regional sales by genre.
+
+```{r}
+g=ggplot(data = data, aes(x = genre, y = sales)) + 
+    geom_bar(stat='identity') +facet_wrap(~regions)+
+  ylab("Sales in Million")+ coord_flip()
+ggplotly(g)
+```
+
+Obviously, North America players contributes most to the game market. The trend of popularity of genres in Europe, North America, and other regions are same as the global trend. Japan is slightly different. 
+
