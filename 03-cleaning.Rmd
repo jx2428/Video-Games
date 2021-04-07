@@ -7,6 +7,7 @@ output:
 
 
 ## Brief View of the Dataset
+
 Here is a brief view of the first 20 rows of the dataset.
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(readr)
@@ -15,7 +16,7 @@ vgsales = read_csv("vgsales-12-4-2019.csv")
 datatable(head(vgsales,20),rownames = FALSE)
 ```
 
-Let us also take a view at all variables of the data
+Let us also take a view at all variables of the data.
 ```{r}
 colnames(vgsales)
 ```
