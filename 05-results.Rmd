@@ -305,7 +305,7 @@ Let's further look at the score difference for individual game. And we would now
 
 
 ```{r message = FALSE, echo=FALSE}
-tidydf = vgsales %>%
+tidydf = plotdata %>%
   arrange(desc(User_Score))%>%
   filter(!is.na("Critic_Score")) %>%
   filter(!is.na("User_Score"))%>%
