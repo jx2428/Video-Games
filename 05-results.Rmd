@@ -148,7 +148,7 @@ Obviously, North America players contributes most to the game market. The trend 
 
 ## Users' and Critics' Preference
 
-To help players obtain a comprehensive review on video games, data source provides critics’ scores and users’ scores. From these two columns, we could sort the most popular video games among critics and general players based on a standardized scoring scale (out of ten), and study what the influential factors are.
+Critics generally influence the public opinion trends of games, and can promote game sales (or hit game sales) to a certain extent. Therefore, game companies that want to achieve a certain breakthrough in sales can first target on the preferences of these media and professional players. 
 
 ```{r, echo = FALSE, message = FALSE}
 # Dataset involving genres and scores
