@@ -13,7 +13,7 @@ Here is a brief view of the first 20 rows of the dataset.
 library(readr)
 library(DT)
 vgsales = read_csv("vgsales-12-4-2019.csv")
-datatable(head(vgsales,20),rownames = FALSE)
+datatable(head(vgsales,20),rownames = FALSE,options = list(scrollX = TRUE))
 ```
 
 Let us also take a view at all variables of the data.
