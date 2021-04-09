@@ -150,3 +150,212 @@ ggplotly(g)
 
 Obviously, North America players contributes most to the game market. The trend of popularity of genres in Europe, North America, and other regions are same as the global trend. Japan is slightly different. 
 
+
+
+## Users' and Critics' Preference
+
+To help players obtain a comprehensive review on video games, data source provides critics’ scores and users’ scores. From these two columns, we could sort the most popular video games among critics and general players based on a standardized scoring scale (out of ten), and study what the influential factors are.
+
+```{r, echo = FALSE, message = FALSE}
+# Dataset involving genres and scores
+dataset$Critic_Score = (dataset$Critic_Score)
+dataset$User_Score = (dataset$User_Score)
+
+library(dplyr)
+dataset$Genre=factor(dataset$Genre)
+genre = levels(dataset$Genre)
+n=length(levels(dataset$Genre))
+Critic_Score=rep(NA,n)
+User_Score=rep(NA,n)
+
+index=1
+for (i in genre){
+  Critic_Score[index] = median(dataset[dataset$Genre==i,]$Critic_Score)
+  User_Score[index] = median(dataset[dataset$Genre==i,]$User_Score)
+  index=index+1
+}
+
+data = data.frame(
+  genre = rep(factor(genre),2),
+  Critic_Score = Critic_Score, User_Score = User_Score
+)
+
+#data
+```
+
+```{r, echo = FALSE,message=FALSE}
+library(tidyverse)
+theme_dotplot <- theme_bw(14) +
+    theme(axis.text.y = element_text(size = rel(.75)),
+        axis.ticks.y = element_blank(),
+        axis.title.x = element_text(size = rel(.75)),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(size = 0.5),
+        panel.grid.minor.x = element_blank())
+
+
+names = levels(factor(dataset$Name))
+Critic_Score = rep(NA,length(names))
+User_Score = rep(NA,length(names))
+
+index=1
+for (i in names){
+  Critic_Score[index] = median(dataset[dataset$Name==i,]$Critic_Score)
+  User_Score[index] = median(dataset[dataset$Name==i,]$User_Score)
+  index=index+1
+}
+```
+
+
+```{r message = FALSE, fig.show='hide', echo = FALSE}
+plotdata = data.frame(names=names,Critic_Score = Critic_Score, User_Score = User_Score)
+```
+
+```{r message = FALSE, fig.show='hide', echo = FALSE}
+# Compare socre ranges for crtics and users
+critic = plotdata$Critic_Score
+user = plotdata$User_Score
+
+hgC = hist(critic,breaks = 20)
+hgU = hist(user)
+#range(c(hgC$breaks, hgU$breaks))
+
+#max(c(hgC$count, hgU$count)) # Get range for y-axis
+
+c1 = rgb(0,0,139,max = 255, alpha = 100, names = "lt.blue")
+c2 = rgb(255,165,0, max = 255, alpha = 100, names = "lt.orange")
+```
+
+
+```{r message = FALSE, echo=FALSE}
+plot(hgC, col = c1, xlim = c(3.4, 10), ylim = c(0,24),
+     main = "Histogram for Critic and User Scores",
+     xlab = "critic/user score")
+plot(hgU,col = c2, add = TRUE)
+
+legend("topleft", inset=.02, title="Type of Scores",
+   c("Critic","User"), fill=c(c1,c2), horiz=TRUE, cex=0.8)
+```
+\
+After plotting out the histogram of 95 critic scores and 95 user scores (using median), the distrubution of both critic and users' scores are left skewed. We can notice general users give scores more loosely on same selected vedio games compared to critics. The user group generally give high score in a sense that all games have score above 6 and most of them have scores between 8 to 9. Comparatively, critic are more strict on evaluating; a few video games have score less than 6, and a large number of scores range from 6 to 9.\
+
+
+```{r, echo = FALSE}
+# scores for each genre
+
+dataset$Genre=factor(dataset$Genre)
+genre = levels(dataset$Genre)
+n=length(levels(dataset$Genre))
+Critic_Score=rep(NA,n)
+User_Score=rep(NA,n)
+
+index=1
+for (i in genre){
+  Critic_Score[index] = median(dataset[dataset$Genre==i,]$Critic_Score)
+  User_Score[index] = median(dataset[dataset$Genre==i,]$User_Score)
+  index=index+1
+}
+
+genre.data = data.frame(
+  genre = factor(genre),
+  Critic_Score = Critic_Score, User_Score = User_Score
+)
+
+#genre.data
+```
+
+
+```{r, echo = FALSE, message=FALSE}
+library(plotly)
+data.user = genre.data %>% mutate(genre = forcats::fct_reorder(genre, User_Score)) 
+p1 = ggplot(data.user, aes(genre, User_Score, fill = genre)) + geom_col(position = "dodge")+
+  theme(axis.text.x = element_text(angle=45))+
+  ylab("User Score")+
+  xlab("Genre")+
+  ggtitle("User Scores for Different Genres")
+
+ggplotly(p1)
+```
+
+```{r, echo = FALSE, message =FALSE}
+data.critic = genre.data %>% mutate(genre = forcats::fct_reorder(genre, Critic_Score)) 
+p = ggplot(data.critic, aes(genre, Critic_Score, fill = genre)) + geom_col(position = "dodge")+
+  theme(axis.text.x = element_text(angle=45))+
+  ylab("Critic Score")+
+  xlab("Genre")+
+  ggtitle("Critic Scores for Different Genres")
+
+ggplotly(p)
+```
+
+From two graphs above, Racing is undoubtedly the most popular genre among general players and critics, and has the highest score. Reviewers all dislike about Action-Adventure genre, which has low ranking. Besides, it seems like general users and critics have a large discrepancy when rating Sports games. While users place Sports video game in rank 2 with score as high as 9.1, critics are overall not optimistic about sports games, which has the lowest score 5.8 among all genres of video games.
+
+
+\ 
+Let's further look at the score difference for individual game. And we would now expect a large score difference in Sports genre. We have picked top-30 rated video games for analysis. 
+
+
+```{r message = FALSE, echo=FALSE}
+tidydf = plotdata %>%
+  arrange(desc(User_Score))%>%
+  filter(!is.na("Critic_Score")) %>%
+  filter(!is.na("User_Score"))%>%
+  top_n(30) %>%
+  rename( User = "User_Score",Critic = "Critic_Score") %>%
+  gather(key = "ScoreType", value = "Median", "Critic","User")
+```
+
+```{r echo=FALSE}
+ ggplot(tidydf, 
+       aes(Median, fct_reorder2(names, ScoreType=="User_Score", Median, .desc = FALSE))) +
+  geom_line(aes(group = names), color = "grey")+
+  geom_point(aes(color = ScoreType)) +
+  ggtitle("Top Rated Video Games Sorting by Users") +
+  ylab("") +
+  theme_dotplot 
+
+```
+\
+The top-5 rated video games for users are:\
+
+- **Red Dead Redemption, Lunar: Silver Star Story Complete**\
+- **Metal Gear Solid 4: Guns of the Patriots, Forza Motorsport 3**\
+- **Uncharted 2: Among Thieves, Grand Theft Auto: Chinatown Wars, Fire Emblem Warriors**\
+- **BioShock**\
+- **Star OceanL The Last Hope International, MAG: Massive Action Game, Demon's Souls**\
+\
+\
+```{r message = FALSE, echo = FALSE}
+tidydf2 = plotdata %>%
+  arrange(desc(Critic_Score))%>%
+  filter(!is.na("Critic_Score")) %>%
+  filter(!is.na("User_Score"))%>%
+  top_n(30) %>%
+  rename( User = "User_Score",Critic = "Critic_Score") %>%
+  gather(key = "ScoreType", value = "Median", "User","Critic")
+
+ ggplot(tidydf2, 
+       aes(Median, fct_reorder2(names, ScoreType=="Critic_Score", Median, .desc = FALSE))) +
+  geom_line(aes(group = names), color = "grey")+
+  geom_point(aes(color = ScoreType)) + 
+   ggtitle("Top Rated Video Games Sorting by Critics") + ylab("") +
+  theme_dotplot 
+```
+
+\
+We have top 5 rated video games for critics and they are:\
+
+- **Call of Duty 4: Modern Warfare**\
+- **Uncharted 2: Among Thieves, Red Dead Redemption, Grand Theft Auto: Chinatown Wars**\
+- **BioShock**\
+- **LittleBig Planet**\
+- **Street Fighter IV, Metal Gear Solid 4L Guns of the Patriots**\
+
+\
+
+In general, users are more generous in giving scores for video games as we mentioned before. All of 30 selected games have scores above 9 from the perspective of users, whereas for critics, scores ranges from below 6 to 9. \
+
+It is noteworthy that there is a large socre difference in video game **FIFA18**, in which users give scores above 9 whereas critics rate below 6. This observation is consistent with the huge difference in ratings in sports games. One possible reason could be users who give high scores are fans from FIFA or football. Similar scenario can be seen depending on the interests of users. To be more specific, users tend to review games they want to play and play games that they think they will enjoy. So some scores tend to be a bit high, often hovering between 7 and 9 and rarely dropping to a 6 or below. On the other hand, critics will measure various aspects when evaluating a video game: story plot, gameplay design, background music, game operation, etc. Due to the limitation of our dataset, we were not able to analyze the factor affecting scores. If we could gather more information about rating criteria, a more solid conclusion could be draw from analysis.\
+
+
+
