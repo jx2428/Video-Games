@@ -1,2 +1,21 @@
 # Conclusion
 
+1.
+
+
+2.
+
+
+
+3. Critics generally influence the public opinion trends of games, and can promote game sales (or hit game sales) to a certain extent. Therefore, game companies that want to achieve a certain breakthrough in sales can first target on the preferences of these media and professional players. From our analysis, both critics and users give high score on racing games. In this genre, players will have higher expectation on new games given high scores of previous similar works. This expectation will also lever the bar for new game producers. But based on the unpopularity of racing genre, new games will grab public attention as well. For those who want to target on general users can focus on sports games, and FIFA18 is a lively example. Though critics may not favor this type of game, there will always be customers paying for new products as long as their passion to sports remain. 
+
+
+
+## Limitaion
+Due to a large number of missing values in users' scores, the analysis and conlusion in section 5.3 are biased and the pattern only applies to limited data. This issue can be fixed in the future study by collecting more score data.
+
+Besides, one can continue studying the influencial factors affecting scores of video games. 
+
+## Ending
+
+Game development companies and teams should also maintain their original intentions and pursue the goal of high-quality games based on player experience, rather than drived by profits or sales. The more they are in the context of fast consumption and fierce competition, the more they should focus on quality. Excellent games also play the role of conveying correct values and telling good stories like movies. This is also an important task on the shoulders of game companies and development teams.

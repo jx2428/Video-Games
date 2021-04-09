@@ -19,21 +19,20 @@ Variables included but not limitied in this study are:
 - Rank - Ranking of overall sales\
 - Name - Name of the game\
 - Platform - Platform of the game (i.e. PC, PS4, XOne, etc.)\
-- Genre - Genre of the game\
-- ESRB Rating - ESRB Rating of the game\
-- Publisher - Publisher of the game\
+- Genre - Genre of the game (12 genres: Action, Adventure, Sports, etc.)\
+- Publisher - Publisher of the game (i.e. Sony Computer Entertainment, Activision, Rockstar Games, Capcom, etc.)\
 - Developer - Developer of the game\
-- Critic Score - Critic score of the game from 10\
-- User Score - Users score the game from 10\
+- Critic Score - Critic score of the game (out of 10)\
+- User Score - Users score the game (out of 10)\
 - Total Shipped - Total shipped copies of the game\
 - Global_Sales - Total worldwide sales (in millions)\
 - NA_Sales - Sales in North America (in millions)\
 - PAL_Sales - Sales in Europe (in millions)\
 - JP_Sales - Sales in Japan (in millions)\
 - Other_Sales - Sales in the rest of the world (in millions)\
-- Year - Year of release of the game\
+- Year - Year of release of the game (from 1996 to 2018)\
 \
 
-It is a pity for us to see its lateset updates was two years ago. We were not able to analyze the new released PS5 sales figures since the gaming cosole was released in November 2020 and the data has not been collected. \
+It is a pity for us to see its lateset updates was there years ago. We were not able to analyze the new released PS5 sales figures since the gaming cosole was released in November 2020 and the data has not been collected. \
 
 After carefully inspecting the dataset, we found many data in our cvs data file were missing. For instance, column "VGChartz_Score" did not contain any value. A lot of sales data, including Global sales, NA sales, PAL sales, JP sales and other sales were not available either. We will first remove those NA values and check if the data is still usable for later study. 
