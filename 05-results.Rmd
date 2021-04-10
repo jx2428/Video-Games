@@ -21,7 +21,9 @@ ggplot(dataset,aes(x=fct_infreq(Platform))) + geom_bar() +labs(x="Platform",y="N
 
 ```
 
-We can see that PS3 and X360 have published most games and earned most sales among all platforms throughout years. Although Wii had some games, its sales amount is not comparable to that of PS3 and X360.
+We can see that PS3 and X360 have published most games and earned most sales among all platforms throughout years. Although Wii had some games, its sales amount is not comparable to that of PS3 and X360. Other platforms had less than 10 games and usually had less than 12.5 million sales. Then just by observing these two plots, we see that PS3 and X360 have almost dominated the video game market. However, did PS3 and X360 perform the best for every year? As we are interested in finding out the trend of platforms over time, we take the variable Year into our consideration.
+
+For the graph below, we only picked several platforms which we consider them to be significant (either have fair number of games or decent amount of sales) and classified all other platforms to the "Other" category so that we can be focused on influential platforms over the years.
 
 ```{r}
 
@@ -41,7 +43,7 @@ ggplot(g,aes(x=Year,y=Sales,fill=Platform)) + geom_col() +labs(x="Year",y="Sales
 
 ```
 
-
+As the bar plot displays, we can see that it is not the case that PS3 and X360 dominate the market for the entire period. Before 2000, the video games market was pretty small. Most games at that time were on platforms that we do not even know about today. In 2001, playing on PS2 was a popular trend. Then, PS3 and X360 boomed from 2005 to 2010. These two platforms took up most market in that period and almost all of their sales were from 2005 to 2010. Later although they did publish more games, but since significant amount of sales data is missing/unavailable, we have no way to tell their performance after 2010. Except from missing values problem, Xone had a boom in 2014. Starting from 2015, NS and PS4 as the new generation of platforms have taken up the market and it is possible that they could replace PS3 and X360 in the future.
 
 
 
@@ -51,7 +53,7 @@ Now let us take a look at publishers are in our dataset.
 ggplot(dataset,aes(x=fct_infreq(Publisher))) + geom_bar() +labs(x="Publisher",y="Number of Games") + coord_flip()
 ```
 
-
+Sony Computer Enterntainment has published most games over the years. Other competitive publishers include Capcom, Ubisoft, Konami, and Activision.
 
 ```{r}
 g1 <- dataset %>% 
@@ -66,7 +68,7 @@ ggplot(g1,aes(x=reorder(Publisher,Global_Sales),y=Global_Sales)) +
 
 ```
 
-Just by looking at the sales amount, the 5 most competitive publishers are Sony Computer Entertainment, Activision, Rockstar Games, Capcom and Ubisoft.
+Sony Computer Entertainment, Activision, Rockstar Games, Capcom, Ubisoft/Konami are the 5 publishers with most sales amount. Although Rockstar Games has the 3rd most selling amount, it has published less games than other competitive publishers. Thus, we decide not to include it in the top publishers list. 
 
 
 ## Top 5 Video Games & Genres
