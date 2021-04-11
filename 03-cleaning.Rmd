@@ -16,14 +16,17 @@ vgsales = read_csv("vgsales-12-4-2019.csv")
 datatable(head(vgsales,20),rownames = FALSE,options = list(scrollX = TRUE))
 ```
 
+
 Let us also take a view at all variables of the data.
 ```{r}
 colnames(vgsales)
 ```
 
-Obviously, there are variables that contribute nothing to our investigation of main questions. Now we decide to remove useless variables and focus on the updated dataset. Here is what the updated dataset looks like.
+Obviously, there are many redundant variables in our dataset. We will not be interested in investigating the url of the game, or the update information about the game, etc. Thus, we deleted a series of useless variables that include basename, ESRB_Rating, Developer, VGChartz_Score, Total_Shipped, Last_Update, url, status, Vgchartzscore, and img_url. This is what our updated dataset looks like:
 
 ```{r}
 dataset = vgsales[,c("Rank","Name","Genre","Platform","Publisher","Critic_Score","User_Score","Global_Sales","NA_Sales","PAL_Sales","JP_Sales","Other_Sales","Year")]
 head(dataset)
 ```
+
+Note that all missing values will be treated in the next section. 
