@@ -262,8 +262,8 @@ genre.data = data.frame(
 ```{r, message = FALSE, echo= FALSE}
 library(plotly)
 p.genre = dataset %>%
-  ggplot(aes(x=Genre, fill = Genre))+
-  geom_bar()+
+  ggplot(aes(x=fct_infreq(Genre))) +
+  geom_bar() + labs(x= "Genre", y="Count") +
   coord_flip()
 
 ggplotly(p.genre)
@@ -276,13 +276,13 @@ ggplotly(p.genre)
 ## Boxplot of critic & user scores
 
 p.critic = dataset %>%
-  ggplot(aes(x=Genre,y=Critic_Score, fill = Genre))+
+  ggplot(aes(x=Genre,y=Critic_Score))+
   geom_boxplot()+
   coord_flip()+
   ylab("Critic Score")
 
 p.user = dataset %>%
-  ggplot(aes(x=Genre,y=User_Score, fill = Genre))+
+  ggplot(aes(x=Genre,y=User_Score))+
   geom_boxplot()+
   coord_flip()+
   ylab("User Score")
