@@ -33,6 +33,6 @@ Variables included but not limitied in this study are:
 - Year - Year of release of the game (from 1996 to 2018)\
 \
 
-It is a pity for us to see its lateset updates was there years ago. We were not able to analyze the new released PS5 sales figures since the gaming cosole was released in November 2020 and the data has not been collected. \
+It is a pity for us to see its lateset updates was three years ago. We were not able to analyze the new released PS5 sales figures since the gaming cosole was released in November 2020 and the data has not been collected. \
 
 After carefully inspecting the dataset, we found many data in our cvs data file were missing. For instance, column "VGChartz_Score" did not contain any value. A lot of sales data, including Global sales, NA sales, PAL sales, JP sales and other sales were not available either. We will first remove those NA values and check if the data is still usable for later study. 
