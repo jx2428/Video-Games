@@ -134,4 +134,6 @@ update(datajapan)
 
 
 
-By clicking the buttom, we can see the sales of genres with decreasing order for each region. In the D3 graph, we can clearly see the the sales trend changes in an interactive way. We could eaisly find the most popular and the least popular games for different regions and compare the sales differences.
+
+\
+By clicking the buttom, we can see the sales of genres with decreasing order for each region. In the D3 graph, we can clearly see the the sales trend changes in an interactive way. We could eaisly find the most popular and the least popular games for different regions and compare the sales differences. In particular, the top 3 genres for all regions are Action, Shooter, Role-playing. Additionally, Action is the most popular genre all over the world. For new video game producers, they could target on Action game to reach high level of sales. 
