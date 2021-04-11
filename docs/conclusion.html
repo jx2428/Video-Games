@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Conclusion | YOUR TITLE HERE</title>
-  <meta name="description" content="Chapter 7 Conclusion | YOUR TITLE HERE" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <title>Chapter 7 Conclusion | Video Games Analysis</title>
+  <meta name="description" content="Chapter 7 Conclusion | Video Games Analysis" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Conclusion | YOUR TITLE HERE" />
+  <meta property="og:title" content="Chapter 7 Conclusion | Video Games Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Conclusion | YOUR TITLE HERE" />
+  <meta name="twitter:title" content="Chapter 7 Conclusion | Video Games Analysis" />
   
   
   
 
-<meta name="author" content="YOUR NAMES HERE" />
+<meta name="author" content="Siqi Chen, Yaoling Wang, Jiashu Xia" />
 
 
-<meta name="date" content="2020-11-09" />
+<meta name="date" content="2021-04-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,7 @@
   
 <link rel="prev" href="interactive-component.html"/>
 
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -51,7 +50,18 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 
 
 
@@ -68,16 +78,29 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">SHORT TITLE HERE</a></li>
+<li><a href="./">Video Game Analysis</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#brief-view-of-the-dataset"><i class="fa fa-check"></i><b>3.1</b> Brief View of the Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-data-count"><i class="fa fa-check"></i><b>4.1</b> Missing data Count</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#visualizing-missing-data-in-dataset"><i class="fa fa-check"></i><b>4.2</b> Visualizing Missing data in dataset</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#deleting-nas"><i class="fa fa-check"></i><b>4.3</b> Deleting NAs</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#comparing-the-competitiveness-of-publishers-platforms"><i class="fa fa-check"></i><b>5.1</b> Comparing the Competitiveness of Publishers &amp; Platforms</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#top-5-video-games-genres"><i class="fa fa-check"></i><b>5.2</b> Top 5 Video Games &amp; Genres</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#users-and-critics-preference"><i class="fa fa-check"></i><b>5.3</b> Users’ and Critics’ Preference</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
-<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a><ul>
+<li class="chapter" data-level="7.1" data-path="conclusion.html"><a href="conclusion.html#limitaion"><i class="fa fa-check"></i><b>7.1</b> Limitaion</a></li>
+<li class="chapter" data-level="7.2" data-path="conclusion.html"><a href="conclusion.html#ending"><i class="fa fa-check"></i><b>7.2</b> Ending</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -89,7 +112,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">YOUR TITLE HERE</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Video Games Analysis</a>
           </h1>
         </div>
 
@@ -97,9 +120,23 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conclusion" class="section level1" number="7">
+<div id="conclusion" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Conclusion</h1>
+<ol style="list-style-type: decimal">
+<li><p>PS3 and X360 are the two most successful platforms in recent two decades because they had most games and most sales amount over time. However, their performances were not consistent every year. Most of their games and sales were from 2005 to 2010. Platforms like Xone, PS2 managed to take up some market value outside of the golden period. After 2015, games are being played on new platforms such as NS and PS4. These two platforms might have the potential to exceed PS3 and X360 in the future. Sony Computer Entertainment, Capcom, Ubisoft, Activision, and Konami are considered as the top 5 video game publishers as they published most games and have the most sellings.</p></li>
+<li><p>Action, Shooter, Role-plying, Platform, and Adventure are the top 5 popular genres all cross the world. The global sales for action and shooter games are over 50 million dollars. Europe, North America, and Other Regions has the similar trend with global sales, except for Japan. In Japan, Action, Role-plying, Shooter, Fighthing and Adventure are the top 5 popular ones. These regional sale changes might be caused by other resaons that needs futher investigation. The top 5 video games has three different games with different versions, Call of Duty: Modern Warfare version 4 and 2, Assassin’s Creed, Grand Theft Auto version 4 and 5. Therefore, the people’s euthusiam for video games could last a long time and good video games would attracts more players with version updated.</p></li>
+<li><p>Both critics and users give high score on racing games. In this genre, players will have higher expectation on new games given high scores of previous similar works. This expectation will also lever the bar for new game producers. But based on the unpopularity of racing genre, new games will grab public attention as well. For those who want to target on general users can focus on sports games, and FIFA18 is a lively example. Though critics may not favor this type of game, there will always be customers paying for new products as long as their passion to sports remain.</p></li>
+</ol>
+<div id="limitaion" class="section level2">
+<h2><span class="header-section-number">7.1</span> Limitaion</h2>
+<p>All of our data analysis was conducted after eliminating all NA values. However, due to the fact that missing values in sales and in user/critic scores exist by a significant proportion of the entire dataset, the analysis and conclusion might well be biased. If sales data for each game were all available, the conclusion about platforms and publishers could change significantly. Similarly, the analysis and conlusion in section 5.3 are biased and the pattern only applies to limited data. This issue can be fixed in the future study by collecting more score data.</p>
+<p>Besides, one can continue studying the influencial factors affecting scores of video games.</p>
+</div>
+<div id="ending" class="section level2">
+<h2><span class="header-section-number">7.2</span> Ending</h2>
+<p>Game development companies and teams should also maintain their original intentions and pursue the goal of high-quality games based on player experience, rather than drived by profits or sales. The more they are in the context of fast consumption and fierce competition, the more they should focus on quality. Excellent games also play the role of conveying correct values and telling good stories like movies. This is also an important task on the shoulders of game companies and development teams.</p>
 
+</div>
 </div>
             </section>
 
@@ -138,7 +175,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/07-conclusion.Rmd",
+"link": "https://github.com/jx2428/Video-Games/edit/main/07-conclusion.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -146,7 +183,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/07-conclusion.Rmd",
+"link": "https://github.com/jx2428/Video-Games/blob/main/07-conclusion.Rmd",
 "text": null
 },
 "download": null,

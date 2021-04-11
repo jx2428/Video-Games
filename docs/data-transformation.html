@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Data transformation | YOUR TITLE HERE</title>
-  <meta name="description" content="Chapter 3 Data transformation | YOUR TITLE HERE" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <title>Chapter 3 Data transformation | Video Games Analysis</title>
+  <meta name="description" content="Chapter 3 Data transformation | Video Games Analysis" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Data transformation | YOUR TITLE HERE" />
+  <meta property="og:title" content="Chapter 3 Data transformation | Video Games Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Data transformation | YOUR TITLE HERE" />
+  <meta name="twitter:title" content="Chapter 3 Data transformation | Video Games Analysis" />
   
   
   
 
-<meta name="author" content="YOUR NAMES HERE" />
+<meta name="author" content="Siqi Chen, Yaoling Wang, Jiashu Xia" />
 
 
-<meta name="date" content="2020-11-09" />
+<meta name="date" content="2021-04-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,7 @@
   
 <link rel="prev" href="data-sources.html"/>
 <link rel="next" href="missing-values.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -51,7 +50,18 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 
 
 
@@ -68,16 +78,29 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">SHORT TITLE HERE</a></li>
+<li><a href="./">Video Game Analysis</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#brief-view-of-the-dataset"><i class="fa fa-check"></i><b>3.1</b> Brief View of the Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-data-count"><i class="fa fa-check"></i><b>4.1</b> Missing data Count</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#visualizing-missing-data-in-dataset"><i class="fa fa-check"></i><b>4.2</b> Visualizing Missing data in dataset</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#deleting-nas"><i class="fa fa-check"></i><b>4.3</b> Deleting NAs</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#comparing-the-competitiveness-of-publishers-platforms"><i class="fa fa-check"></i><b>5.1</b> Comparing the Competitiveness of Publishers &amp; Platforms</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#top-5-video-games-genres"><i class="fa fa-check"></i><b>5.2</b> Top 5 Video Games &amp; Genres</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#users-and-critics-preference"><i class="fa fa-check"></i><b>5.3</b> Users’ and Critics’ Preference</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
-<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a><ul>
+<li class="chapter" data-level="7.1" data-path="conclusion.html"><a href="conclusion.html#limitaion"><i class="fa fa-check"></i><b>7.1</b> Limitaion</a></li>
+<li class="chapter" data-level="7.2" data-path="conclusion.html"><a href="conclusion.html#ending"><i class="fa fa-check"></i><b>7.2</b> Ending</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -89,7 +112,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">YOUR TITLE HERE</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Video Games Analysis</a>
           </h1>
         </div>
 
@@ -97,9 +120,35 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-transformation" class="section level1" number="3">
+<div id="data-transformation" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Data transformation</h1>
+<div id="brief-view-of-the-dataset" class="section level2">
+<h2><span class="header-section-number">3.1</span> Brief View of the Dataset</h2>
+<p>Here is a brief view of the first 20 rows of the dataset.</p>
+<div id="htmlwidget-2d454a19856e53dadea7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2d454a19856e53dadea7">{"x":{"filter":"none","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],["Wii Sports","Super Mario Bros.","Mario Kart Wii","PlayerUnknown's Battlegrounds","Wii Sports Resort","Pokemon Red / Green / Blue Version","New Super Mario Bros.","Tetris","New Super Mario Bros. Wii","Minecraft","Duck Hunt","Wii Play","Kinect Adventures!","Nintendogs","Mario Kart DS","Pokemon Gold / Silver Version","Wii Fit","Wii Fit Plus","Super Mario World","Grand Theft Auto V"],["wii-sports","super-mario-bros","mario-kart-wii","playerunknowns-battlegrounds","wii-sports-resort","pokmon-red","new-super-mario-bros","tetris","new-super-mario-bros-wii","minecraft","duck-hunt","wii-play","kinect-adventures","nintendogs","mario-kart-ds","pokmon-gold","wii-fit","wii-fit-plus","super-mario-world","grand-theft-auto-v"],["Sports","Platform","Racing","Shooter","Sports","Role-Playing","Platform","Puzzle","Platform","Misc","Shooter","Misc","Party","Simulation","Racing","Role-Playing","Sports","Sports","Platform","Action"],["E",null,"E",null,"E","E","E","E","E",null,null,"E","E","E","E","E","E","E","E","M"],["Wii","NES","Wii","PC","Wii","GB","DS","GB","Wii","PC","NES","Wii","X360","DS","DS","GB","Wii","Wii","SNES","PS3"],["Nintendo","Nintendo","Nintendo","PUBG Corporation","Nintendo","Nintendo","Nintendo","Nintendo","Nintendo","Mojang","Nintendo","Nintendo","Microsoft Game Studios","Nintendo","Nintendo","Nintendo","Nintendo","Nintendo","Nintendo","Rockstar Games"],["Nintendo EAD","Nintendo EAD","Nintendo EAD","PUBG Corporation","Nintendo EAD","Game Freak","Nintendo EAD","Bullet Proof Software","Nintendo EAD","Mojang AB","Nintendo R&amp;D1","Nintendo EAD","Good Science Studio","Nintendo EAD","Nintendo EAD","Game Freak","Nintendo EAD","Nintendo EAD","Nintendo EAD","Rockstar North"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[7.7,10,8.2,null,8,9.4,9.1,null,8.6,10,null,5.9,6.7,8.4,9.1,9.2,7.9,8,8.5,9.4],[null,null,9.1,null,8.8,null,8.1,null,9.2,null,null,4.5,null,null,9.4,null,null,null,null,null],[82.86,40.24,37.14,36.6,33.09,31.38,30.8,30.26,30.22,30.01,28.31,28.02,24,23.96,23.6,23.1,22.67,21.13,20.61,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,20.32],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,6.37],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,9.85],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0.99],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,3.12],[2006,1985,2008,2017,2009,1998,2006,1989,2009,2010,1985,2007,2010,2005,2005,2000,2008,2009,1991,2013],[null,null,"11th Apr 18","13th Nov 18",null,null,null,null,null,"05th Aug 18",null,null,"29th Sep 18",null,null,null,null,null,"10th Aug 18",null],["http://www.vgchartz.com/game/2667/wii-sports/?region=All","http://www.vgchartz.com/game/6455/super-mario-bros/?region=All","http://www.vgchartz.com/game/6968/mario-kart-wii/?region=All","http://www.vgchartz.com/game/215988/playerunknowns-battlegrounds/?region=All","http://www.vgchartz.com/game/24656/wii-sports-resort/?region=All","http://www.vgchartz.com/game/4030/pokemon-red-green-blue-version/?region=All","http://www.vgchartz.com/game/1582/new-super-mario-bros/?region=All","http://www.vgchartz.com/game/4534/tetris/?region=All","http://www.vgchartz.com/game/35076/new-super-mario-bros-wii/?region=All","http://www.vgchartz.com/game/47724/minecraft/?region=All","http://www.vgchartz.com/game/6246/duck-hunt/?region=All","http://www.vgchartz.com/game/2666/wii-play/?region=All","http://www.vgchartz.com/game/45608/kinect-adventures/?region=All","http://www.vgchartz.com/game/1657/nintendogs/?region=All","http://www.vgchartz.com/game/1254/mario-kart-ds/?region=All","http://www.vgchartz.com/game/4025/pokemon-gold-silver-version/?region=All","http://www.vgchartz.com/game/7480/wii-fit/?region=All","http://www.vgchartz.com/game/35077/wii-fit-plus/?region=All","http://www.vgchartz.com/game/4441/super-mario-world/?region=All","http://www.vgchartz.com/game/65884/grand-theft-auto-v/?region=All"],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[null,null,8.7,null,8.8,null,null,null,9.1,null,null,5.3,6.2,null,null,null,8,null,null,null],["/games/boxart/full_2258645AmericaFrontccc.jpg","/games/boxart/8972270ccc.jpg","/games/boxart/full_8932480AmericaFrontccc.jpg","/games/boxart/full_8052843AmericaFrontccc.jpg","/games/boxart/full_7295041AmericaFrontccc.jpg","/games/boxart/full_6442337AmericaFrontccc.png","/games/boxart/full_2916260AmericaFrontccc.jpg","/games/boxart/3740960ccc.jpg","/games/boxart/full_1410872AmericaFrontccc.jpg","/games/boxart/full_minecraft_1AmericaFront.png","/games/boxart/full_6570468AmericaFrontccc.jpg","/games/boxart/full_6165969AmericaFrontccc.jpg","/games/boxart/full_kinect-adventures_386AmericaFront.jpg","/games/boxart/full_4870931AmericaFrontccc.jpg","/games/boxart/full_9551652AmericaFrontccc.jpg","/games/boxart/full_1344180AmericaFrontccc.png","/games/boxart/full_3619557AmericaFrontccc.jpg","/games/boxart/full_2716475AmericaFrontccc.jpg","/games/boxart/full_1091265AmericaFrontccc.jpg","/games/boxart/full_6510540AmericaFrontccc.jpg"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Rank<\/th>\n      <th>Name<\/th>\n      <th>basename<\/th>\n      <th>Genre<\/th>\n      <th>ESRB_Rating<\/th>\n      <th>Platform<\/th>\n      <th>Publisher<\/th>\n      <th>Developer<\/th>\n      <th>VGChartz_Score<\/th>\n      <th>Critic_Score<\/th>\n      <th>User_Score<\/th>\n      <th>Total_Shipped<\/th>\n      <th>Global_Sales<\/th>\n      <th>NA_Sales<\/th>\n      <th>PAL_Sales<\/th>\n      <th>JP_Sales<\/th>\n      <th>Other_Sales<\/th>\n      <th>Year<\/th>\n      <th>Last_Update<\/th>\n      <th>url<\/th>\n      <th>status<\/th>\n      <th>Vgchartzscore<\/th>\n      <th>img_url<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[0,9,10,11,12,13,14,15,16,17,20,21]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>Let us also take a view at all variables of the data.</p>
+<pre><code>##  [1] &quot;Rank&quot;           &quot;Name&quot;           &quot;basename&quot;       &quot;Genre&quot;         
+##  [5] &quot;ESRB_Rating&quot;    &quot;Platform&quot;       &quot;Publisher&quot;      &quot;Developer&quot;     
+##  [9] &quot;VGChartz_Score&quot; &quot;Critic_Score&quot;   &quot;User_Score&quot;     &quot;Total_Shipped&quot; 
+## [13] &quot;Global_Sales&quot;   &quot;NA_Sales&quot;       &quot;PAL_Sales&quot;      &quot;JP_Sales&quot;      
+## [17] &quot;Other_Sales&quot;    &quot;Year&quot;           &quot;Last_Update&quot;    &quot;url&quot;           
+## [21] &quot;status&quot;         &quot;Vgchartzscore&quot;  &quot;img_url&quot;</code></pre>
+<p>Obviously, there are many redundant variables in our dataset. We will not be interested in investigating the url of the game, or the update information about the game, etc. Thus, we deleted a series of useless variables that include basename, ESRB_Rating, Developer, VGChartz_Score, Total_Shipped, Last_Update, url, status, Vgchartzscore, and img_url. This is what our updated dataset looks like:</p>
+<pre><code>## # A tibble: 6 x 13
+##    Rank Name  Genre Platform Publisher Critic_Score User_Score Global_Sales
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;
+## 1     1 Wii ~ Spor~ Wii      Nintendo           7.7       NA             NA
+## 2     2 Supe~ Plat~ NES      Nintendo          10         NA             NA
+## 3     3 Mari~ Raci~ Wii      Nintendo           8.2        9.1           NA
+## 4     4 Play~ Shoo~ PC       PUBG Cor~         NA         NA             NA
+## 5     5 Wii ~ Spor~ Wii      Nintendo           8          8.8           NA
+## 6     6 Poke~ Role~ GB       Nintendo           9.4       NA             NA
+## # ... with 5 more variables: NA_Sales &lt;dbl&gt;, PAL_Sales &lt;dbl&gt;, JP_Sales &lt;dbl&gt;,
+## #   Other_Sales &lt;dbl&gt;, Year &lt;dbl&gt;</code></pre>
+<p>Note that all missing values will be treated in the next section.</p>
 
+</div>
 </div>
             </section>
 
@@ -138,7 +187,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/03-cleaning.Rmd",
+"link": "https://github.com/jx2428/Video-Games/edit/main/03-cleaning.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -146,7 +195,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/03-cleaning.Rmd",
+"link": "https://github.com/jx2428/Video-Games/blob/main/03-cleaning.Rmd",
 "text": null
 },
 "download": null,

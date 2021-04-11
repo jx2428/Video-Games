@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Interactive component | YOUR TITLE HERE</title>
-  <meta name="description" content="Chapter 6 Interactive component | YOUR TITLE HERE" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <title>Chapter 6 Interactive component | Video Games Analysis</title>
+  <meta name="description" content="Chapter 6 Interactive component | Video Games Analysis" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Interactive component | YOUR TITLE HERE" />
+  <meta property="og:title" content="Chapter 6 Interactive component | Video Games Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,15 +16,15 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Interactive component | YOUR TITLE HERE" />
+  <meta name="twitter:title" content="Chapter 6 Interactive component | Video Games Analysis" />
   
   
   
 
-<meta name="author" content="YOUR NAMES HERE" />
+<meta name="author" content="Siqi Chen, Yaoling Wang, Jiashu Xia" />
 
 
-<meta name="date" content="2020-11-09" />
+<meta name="date" content="2021-04-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,7 @@
   
 <link rel="prev" href="results.html"/>
 <link rel="next" href="conclusion.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -51,7 +50,18 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 
 
 
@@ -68,16 +78,29 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">SHORT TITLE HERE</a></li>
+<li><a href="./">Video Game Analysis</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
-<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#brief-view-of-the-dataset"><i class="fa fa-check"></i><b>3.1</b> Brief View of the Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-data-count"><i class="fa fa-check"></i><b>4.1</b> Missing data Count</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#visualizing-missing-data-in-dataset"><i class="fa fa-check"></i><b>4.2</b> Visualizing Missing data in dataset</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#deleting-nas"><i class="fa fa-check"></i><b>4.3</b> Deleting NAs</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#comparing-the-competitiveness-of-publishers-platforms"><i class="fa fa-check"></i><b>5.1</b> Comparing the Competitiveness of Publishers &amp; Platforms</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#top-5-video-games-genres"><i class="fa fa-check"></i><b>5.2</b> Top 5 Video Games &amp; Genres</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#users-and-critics-preference"><i class="fa fa-check"></i><b>5.3</b> Users’ and Critics’ Preference</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
-<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a><ul>
+<li class="chapter" data-level="7.1" data-path="conclusion.html"><a href="conclusion.html#limitaion"><i class="fa fa-check"></i><b>7.1</b> Limitaion</a></li>
+<li class="chapter" data-level="7.2" data-path="conclusion.html"><a href="conclusion.html#ending"><i class="fa fa-check"></i><b>7.2</b> Ending</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -89,7 +112,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">YOUR TITLE HERE</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Video Games Analysis</a>
           </h1>
         </div>
 
@@ -97,8 +120,127 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="interactive-component" class="section level1" number="6">
+<div id="interactive-component" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Interactive component</h1>
+<script>
+    var datana = [{"genre":"Action","sales":42.24},{"genre":"Shooter","sales":39.25},{"genre":"Role-Playing","sales":14.74},{"genre":"Platform","sales":7.9},{"genre":"Adventure","sales":4.8},{"genre":"Fighting","sales":4.45},{"genre":"Misc","sales":3.5},{"genre":"Racing","sales":2.99},{"genre":"Strategy","sales":2.64},{"genre":"Action-Adventure","sales":0.35},{"genre":"Sports","sales":0.35}];
+    var datajapan = [{"genre":"Action","sales":7.29},{"genre":"Role-Playing","sales":4.83},{"genre":"Shooter","sales":1.53},{"genre":"Fighting","sales":1.05},{"genre":"Adventure","sales":0.86},{"genre":"Platform","sales":0.66},{"genre":"Strategy","sales":0.44},{"genre":"Sports","sales":0.13},{"genre":"Racing","sales":0.1},{"genre":"Action-Adventure","sales":0.08},{"genre":"Misc","sales":0.03}];
+    var dataeu = [{"genre":"Action","sales":29.36},{"genre":"Shooter","sales":19.33},{"genre":"Role-Playing","sales":6.67},{"genre":"Platform","sales":5.06},{"genre":"Adventure","sales":2.93},{"genre":"Fighting","sales":2.14},{"genre":"Racing","sales":1.9},{"genre":"Misc","sales":1.54},{"genre":"Strategy","sales":1.1},{"genre":"Sports","sales":0.55},{"genre":"Action-Adventure","sales":0.37}];
+    var dataother = [{"genre":"Action","sales":11.47},{"genre":"Shooter","sales":7.88},{"genre":"Role-Playing","sales":2.5},{"genre":"Platform","sales":1.91},{"genre":"Adventure","sales":1.5},{"genre":"Fighting","sales":0.89},{"genre":"Misc","sales":0.65},{"genre":"Racing","sales":0.51},{"genre":"Strategy","sales":0.37},{"genre":"Sports","sales":0.07},{"genre":"Action-Adventure","sales":0.06}];
+  </script>
+<script src="https://d3js.org/d3.v6.js"></script>
+<button onclick="update(datana)">
+North America Sales
+</button>
+<button onclick="update(dataeu)">
+Europe Sales
+</button>
+<button onclick="update(dataother)">
+Other Sales
+</button>
+<button onclick="update(datajapan)">
+Japan Sales
+</button>
+<div id="my_dataviz">
+
+</div>
+<script>
+var margin = {top: 40, right: 30, bottom: 70, left: 60},
+    width = 500 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
+
+
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// X axis
+var x = d3.scaleBand()
+  .range([ 0, width ])
+  .padding(0.2);
+var xAxis = svg.append("g")
+  .attr("transform", "translate(0," + height + ")")
+;
+  
+// Y axis
+var y = d3.scaleLinear()
+  .range([ height, 0]);
+var yAxis = svg.append("g")
+  .attr("class", "myYaxis")
+
+
+// A function that create / update the plot for a given variable:
+function update(data) {
+
+  x.domain(data.map(function(d) { return d.genre; }))
+  xAxis.call(d3.axisBottom(x))
+  .selectAll("text")
+    .attr("y", 0)
+    .attr("x", 9)
+    .attr("dy", ".35em")
+    .attr("transform", "rotate(90)")
+    .style("text-anchor", "start");
+
+  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text("Genres");  
+  
+  y.domain([0, d3.max(data, function(d) { return d.sales }) ]);
+  yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+   svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Sales in Million");    
+
+
+
+  
+  var u = svg.selectAll("rect")
+    .data(data)
+
+
+
+
+
+  u
+    .enter()
+    .append("rect")
+    .merge(u)
+    .transition()
+    .duration(1000)
+      .attr("x", function(d) { return x(d.genre); })
+      .attr("y", function(d) { return y(d.sales); })
+      .attr("width", x.bandwidth())
+      .attr("height", function(d) { return height - y(d.sales); })
+      .attr("fill", "steelblue")
+
+
+  u.
+  on("mouseover", function(d){d3.select(this).style('fill','red');
+})
+  .on("mouseout", function(d){d3.select(this).style("fill","steelblue");
+});
+    
+
+}
+
+
+update(datajapan)
+
+</script>
+<p><br />
+By clicking the buttom, we can see the sales of genres with decreasing order for each region. In the D3 graph, we can clearly see the the sales trend changes in an interactive way. We could eaisly find the most popular and the least popular games for different regions and compare the sales differences. In particular, the top 3 genres for all regions are Action, Shooter, Role-playing. Additionally, Action is the most popular genre all over the world. For new video game producers, they could target on Action game to reach high level of sales.</p>
 
 </div>
             </section>
@@ -138,7 +280,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/06-interactive.Rmd",
+"link": "https://github.com/jx2428/Video-Games/edit/main/06-interactive.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -146,7 +288,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/06-interactive.Rmd",
+"link": "https://github.com/jx2428/Video-Games/blob/main/06-interactive.Rmd",
 "text": null
 },
 "download": null,
