@@ -1,0 +1,16 @@
+introduction
+data-sources
+data-transformation
+brief-view-of-the-dataset
+missing-values
+missing-data-count
+visualizing-missing-data-in-dataset
+deleting-nas
+results
+comparing-the-competitiveness-of-publishers-platforms
+top-5-video-games-genres
+users-and-critics-preference
+interactive-component
+conclusion
+limitaion
+ending
