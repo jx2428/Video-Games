@@ -29,12 +29,12 @@ cat(
 
 
 
+<div id="my_dataviz"></div>
+
 <button onclick="update(datana)">North America Sales</button>
 <button onclick="update(dataeu)">Europe Sales</button>
 <button onclick="update(dataother)">Other Sales</button>
 <button onclick="update(datajapan)">Japan Sales</button>
-
-<div id="my_dataviz"></div>
 <script>
 var margin = {top: 40, right: 30, bottom: 70, left: 60},
     width = 500 - margin.left - margin.right,
@@ -49,6 +49,15 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+
+svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "20px") 
+        .style("text-decoration", "underline")  
+        .text("Sales VS Genres in Different Regions");
+        
 // X axis
 var x = d3.scaleBand()
   .range([ 0, width ])
