@@ -95,7 +95,8 @@ for (i in names){
 }
 plotdata=data.frame(names=names,indsales=indsales)
 ggplot(plotdata,aes(indsales,reorder(names,indsales)))+
-  geom_point()+ylab("Game Names")+xlab("Global Sales in Milliom")
+  geom_point()+ylab("Game Names")+xlab("Global Sales in Milliom")+
+  labs(title = "Sales for Individual Games")
 
 ```
 
@@ -140,7 +141,8 @@ data = data %>% mutate(genre = forcats::fct_reorder(genre, sales, .fun = sum))
 library(plotly)
 ## stacked bar chart
 p=ggplot(data = data, aes(x = genre, y = sales, fill = regions)) +
-  geom_bar(stat='identity') + coord_flip()+ylab("Sales in million")
+  geom_bar(stat='identity') + coord_flip()+ylab("Sales in million")+
+  labs(title = "Sales for Different Genres")
 
 ggplotly(p)
 ```
@@ -150,7 +152,8 @@ The graph displays the sales for different genres. The colors represent differen
 ```{r}
 g=ggplot(data = data, aes(x = genre, y = sales)) + 
     geom_bar(stat='identity') +facet_wrap(~regions)+
-  ylab("Sales in Million")+ coord_flip()
+  ylab("Sales in Million")+ coord_flip()+
+  labs(title = "Sales for Different Genres by Different Regions")
 ggplotly(g)
 ```
 
