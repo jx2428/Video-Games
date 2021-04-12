@@ -150,7 +150,7 @@ ggplotly(p)
 The graph displays the sales for different genres. The colors represent different regions. From the stacked bar chart, we can find out that Action is most popular genre whereas Action-Adventure is the least popular. The top five genres are: Action, Shooter, Role-plying, platform,and Adventure.In addition, we can see that Action and Shooter captures the majority game market. Next, we will look closer to the regional sales by genre.
 
 ```{r}
-g=ggplot(data = data, aes(x = genre, y = sales)) + 
+ggplot(data = data, aes(x = genre, y = sales)) + 
     geom_bar(stat='identity') +facet_wrap(~regions)+
   ylab("Sales in Million")+ coord_flip()+
   labs(title = "Sales for Different Genres by Different Regions")
