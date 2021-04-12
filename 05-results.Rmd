@@ -154,7 +154,7 @@ g=ggplot(data = data, aes(x = genre, y = sales)) +
     geom_bar(stat='identity') +facet_wrap(~regions)+
   ylab("Sales in Million")+ coord_flip()+
   labs(title = "Sales for Different Genres by Different Regions")
-ggplotly(g)
+
 ```
 
 Obviously, North America players contributes most to the game market. The trend of popularity of genres in Europe, North America, and other regions are same as the global trend. Japan is slightly different. 
