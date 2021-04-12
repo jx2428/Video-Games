@@ -24,7 +24,7 @@
 <meta name="author" content="Siqi Chen, Yaoling Wang, Jiashu Xia" />
 
 
-<meta name="date" content="2021-04-11" />
+<meta name="date" content="2021-04-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -129,6 +129,9 @@
     var dataother = [{"genre":"Action","sales":11.47},{"genre":"Shooter","sales":7.88},{"genre":"Role-Playing","sales":2.5},{"genre":"Platform","sales":1.91},{"genre":"Adventure","sales":1.5},{"genre":"Fighting","sales":0.89},{"genre":"Misc","sales":0.65},{"genre":"Racing","sales":0.51},{"genre":"Strategy","sales":0.37},{"genre":"Sports","sales":0.07},{"genre":"Action-Adventure","sales":0.06}];
   </script>
 <script src="https://d3js.org/d3.v6.js"></script>
+<div id="my_dataviz">
+
+</div>
 <button onclick="update(datana)">
 North America Sales
 </button>
@@ -141,9 +144,6 @@ Other Sales
 <button onclick="update(datajapan)">
 Japan Sales
 </button>
-<div id="my_dataviz">
-
-</div>
 <script>
 var margin = {top: 40, right: 30, bottom: 70, left: 60},
     width = 500 - margin.left - margin.right,
@@ -158,6 +158,15 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+
+svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "20px") 
+        .style("text-decoration", "underline")  
+        .text("Sales VS Genres in Different Regions");
+        
 // X axis
 var x = d3.scaleBand()
   .range([ 0, width ])
